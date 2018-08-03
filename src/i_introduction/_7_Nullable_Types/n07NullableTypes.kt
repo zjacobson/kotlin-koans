@@ -24,7 +24,7 @@ fun todoTask7(client: Client?, message: String?, mailer: Mailer): Nothing = TODO
 
 fun sendMessageToClient(client: Client?, message: String?, mailer: Mailer) {
     if (client?.personalInfo?.email == null || message == null) return
-    
+
     mailer.sendMessage(client.personalInfo.email, message)
 }
 
