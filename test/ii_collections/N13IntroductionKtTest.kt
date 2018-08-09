@@ -1,12 +1,12 @@
 package ii_collections
 
-import ii_collections.data.CUSTOMERS
-import ii_collections.data.shop
+import ii_collections.data.DELIVERIES
+import ii_collections.data.trip
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class N13IntroductionKtTest {
-    @Test fun testSetOfCustomers() {
-        assertEquals(CUSTOMERS.values.toSet(), shop.getSetOfDeliveries())
+    @Test fun testSetOfDeliveries() {
+        assertEquals(DELIVERIES.values.toSet(), trip.getSetOfDeliveries())
     }
 }

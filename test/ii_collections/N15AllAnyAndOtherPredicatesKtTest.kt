@@ -5,25 +5,25 @@ import org.junit.Assert.*
 import org.junit.Test
 
 class N15AllAnyAndOtherPredicatesKtTest {
-    @Test fun testCustomerIsFromCity() {
-        assertTrue(CUSTOMERS[lucas]!!.isFrom(Canberra))
-        assertFalse(CUSTOMERS[lucas]!!.isFrom(Budapest))
+    @Test fun testDeliveryIsFromCity() {
+        assertTrue(DELIVERIES[lucas]!!.isFrom(Canberra))
+        assertFalse(DELIVERIES[lucas]!!.isFrom(Budapest))
     }
 
-    @Test fun testAllCustomersAreFromCity() {
-        assertFalse(shop.checkAllCustomersAreFrom(Canberra))
+    @Test fun testAllDeliveriesAreFromCity() {
+        assertFalse(trip.checkAllDeliveriesAreFrom(Canberra))
     }
 
-    @Test fun testAnyCustomerIsFromCity() {
-        assertTrue(shop.hasCustomerFrom(Canberra))
+    @Test fun testAnyDeliveryIsFromCity() {
+        assertTrue(trip.hasDeliveryFrom(Canberra))
     }
 
-    @Test fun testCountCustomersFromCity() {
-        assertEquals(2, shop.countCustomersFrom(Canberra))
+    @Test fun testCountDeliveriesFromCity() {
+        assertEquals(2, trip.countDeliveriesFrom(Canberra))
     }
 
-    @Test fun testFirstCustomerFromCity() {
-        assertEquals(CUSTOMERS[lucas], shop.findFirstCustomerFrom(Canberra))
-        assertEquals(null, shop.findFirstCustomerFrom(City("Chicago")))
+    @Test fun testFirstDeliveryFromCity() {
+        assertEquals(DELIVERIES[lucas], trip.findFirstDeliveryFrom(Canberra))
+        assertEquals(null, trip.findFirstDeliveryFrom(City("Chicago")))
     }
 }

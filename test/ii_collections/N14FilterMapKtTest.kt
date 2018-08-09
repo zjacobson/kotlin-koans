@@ -5,14 +5,14 @@ import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class N14FilterMapKtTest {
-    @Test fun testCitiesCustomersAreFrom() {
-        assertEquals(setOf(Canberra, Vancouver, Budapest, Ankara, Tokyo), shop.getCitiesCustomersAreFrom())
+    @Test fun testCitiesDeliveriesAreFrom() {
+        assertEquals(setOf(Canberra, Vancouver, Budapest, Ankara, Tokyo), trip.getCitiesDeliveriesAreFrom())
     }
 
     /**
-     * Returns the list of the CUSTOMERS who live in the city 'city'
+     * Returns the list of the DELIVERIES who live in the city 'city'
      */
-    @Test fun testCustomersFromCity() {
-        assertEquals(listOf(CUSTOMERS[lucas], CUSTOMERS[cooper]), shop.getCustomersFrom(Canberra))
+    @Test fun testDeliveriesFromCity() {
+        assertEquals(listOf(DELIVERIES[lucas], DELIVERIES[cooper]), trip.getDeliveriesFrom(Canberra))
     }
 }

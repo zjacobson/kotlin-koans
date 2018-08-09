@@ -15,10 +15,10 @@ fun example2(list: List<Int>) {
 
 fun Delivery.isFrom(city: City): Boolean = this.city == city
 
-fun Trip.checkAllCustomersAreFrom(city: City): Boolean  = deliveries.all { it.isFrom(city) }
+fun Trip.checkAllDeliveriesAreFrom(city: City): Boolean  = deliveries.all { it.isFrom(city) }
 
-fun Trip.hasCustomerFrom(city: City): Boolean = deliveries.any { it.isFrom(city) }
+fun Trip.hasDeliveryFrom(city: City): Boolean = deliveries.any { it.isFrom(city) }
 
-fun Trip.countCustomersFrom(city: City): Int = deliveries.count { it.isFrom(city) }
+fun Trip.countDeliveriesFrom(city: City): Int = deliveries.count { it.isFrom(city) }
 
-fun Trip.findFirstCustomerFrom(city: City): Delivery? = deliveries.firstOrNull { it.isFrom(city) }
+fun Trip.findFirstDeliveryFrom(city: City): Delivery? = deliveries.firstOrNull { it.isFrom(city) }

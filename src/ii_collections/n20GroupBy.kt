@@ -6,7 +6,7 @@ fun example7() {
     result == mapOf(1 to listOf("a", "b"), 2 to listOf("ba", "ad"), 3 to listOf("ccc"))
 }
 
-fun Trip.groupCustomersByCity(): Map<City, List<Delivery>> =
+fun Trip.groupDeliveriesByCity(): Map<City, List<Delivery>> =
     // Return a map of the deliveries living in each city
     deliveries.groupBy { it.city }
 

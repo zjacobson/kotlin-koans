@@ -6,7 +6,7 @@ fun example5() {
     result == listOf("a", "cc", "bbb")
 }
 
-fun Trip.getCustomersSortedByNumberOfOrders(): List<Delivery> =
+fun Trip.getDeliveriesSortedByNumberOfOrders(): List<Delivery> =
     // Return a list of deliveries, sorted by the ascending number of orders they made
     deliveries.sortedBy { it.orders.size }
 

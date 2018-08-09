@@ -12,7 +12,7 @@ fun whatFoldDoes(): Int {
     return result
 }
 
-fun Trip.getSetOfProductsOrderedByEachCustomer(): Set<Item> {
+fun Trip.getSetOfItemsOrderedByEachDelivery(): Set<Item> {
     // Return the set of items that were ordered by each of the deliveries
     return deliveries.fold(allOrderedItems) {
         orderedByAll, customer ->

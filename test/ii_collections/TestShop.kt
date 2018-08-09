@@ -16,7 +16,7 @@ val webStorm = Item("WebStorm", 49.0)
 val teamCity = Item("TeamCity", 299.0)
 val youTrack = Item("YouTrack", 500.0)
 
-//CUSTOMERS
+//DELIVERIES
 val lucas = "Lucas"
 val cooper = "Cooper"
 val nathan = "Nathan"
@@ -34,9 +34,9 @@ val Tokyo = City("Tokyo")
 
 fun customer(name: String, city: City, vararg orders: Order) = Delivery(name, city, orders.toList())
 fun order(vararg items: Item, isDelivered: Boolean = true) = Order(items.toList(), isDelivered)
-fun shop(name: String, vararg deliveries: Delivery) = Trip(name, deliveries.toList())
+fun trip(name: String, vararg deliveries: Delivery) = Trip(name, deliveries.toList())
 
-val shop = shop("jb test shop",
+val trip = trip("jb test trip",
         customer(lucas, Canberra,
                 order(reSharper),
                 order(reSharper, dotMemory, dotTrace)
@@ -63,15 +63,15 @@ val shop = shop("jb test shop",
 
 )
 
-val CUSTOMERS: Map<String, Delivery> = shop.deliveries.fold(hashMapOf(), {
+val DELIVERIES: Map<String, Delivery> = trip.deliveries.fold(hashMapOf(), {
     map, customer ->
     map[customer.name] = customer
     map
 })
 
-val orderedProducts = setOf(idea, reSharper, dotTrace, dotMemory, rubyMine, webStorm, phpStorm)
+val orderedItems = setOf(idea, reSharper, dotTrace, dotMemory, rubyMine, webStorm, phpStorm)
 
-val sortedCustomers = listOf(cooper, nathan, bajram, asuka, lucas, riku, reka).map { CUSTOMERS[it] }
+val sortedDeliveries = listOf(cooper, nathan, bajram, asuka, lucas, riku, reka).map { DELIVERIES[it] }
 
 val groupedByCities = mapOf(
         Canberra to listOf(lucas, cooper),
@@ -79,4 +79,4 @@ val groupedByCities = mapOf(
         Budapest to listOf(reka),
         Ankara to listOf(bajram),
         Tokyo to listOf(asuka, riku)
-).mapValues { it.value.map { name -> CUSTOMERS[name] } }
+).mapValues { it.value.map { name -> DELIVERIES[name] } }

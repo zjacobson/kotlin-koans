@@ -10,7 +10,7 @@ fun example8() {
     negative == listOf(-4, -11)
 }
 
-fun Trip.getCustomersWithMoreUndeliveredOrdersThanDelivered(): Set<Delivery> =
+fun Trip.getDeliveriesWithMoreUndeliveredOrdersThanDelivered(): Set<Delivery> =
 // Return deliveries who have more undelivered orders than delivered
         deliveries.partition { it.orders.count { !it.isDelivered } > it.orders.count { it.isDelivered } }.first.toSet()
 
