@@ -13,12 +13,12 @@ fun example2(list: List<Int>) {
     val firstPositiveNumber: Int? = list.firstOrNull { it > 0 }
 }
 
-fun Customer.isFrom(city: City): Boolean = this.city == city
+fun Delivery.isFrom(city: City): Boolean = this.city == city
 
-fun Shop.checkAllCustomersAreFrom(city: City): Boolean  = customers.all { it.isFrom(city) }
+fun Trip.checkAllCustomersAreFrom(city: City): Boolean  = deliveries.all { it.isFrom(city) }
 
-fun Shop.hasCustomerFrom(city: City): Boolean = customers.any { it.isFrom(city) }
+fun Trip.hasCustomerFrom(city: City): Boolean = deliveries.any { it.isFrom(city) }
 
-fun Shop.countCustomersFrom(city: City): Int = customers.count { it.isFrom(city) }
+fun Trip.countCustomersFrom(city: City): Int = deliveries.count { it.isFrom(city) }
 
-fun Shop.findFirstCustomerFrom(city: City): Customer? = customers.firstOrNull { it.isFrom(city) }
+fun Trip.findFirstCustomerFrom(city: City): Delivery? = deliveries.firstOrNull { it.isFrom(city) }

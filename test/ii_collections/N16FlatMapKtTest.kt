@@ -6,10 +6,10 @@ import org.junit.Test
 
 class N16FlatMapKtTest {
     @Test fun testGetOrderedProductsSet() {
-        assertEquals(setOf(idea), customers[reka]!!.orderedProducts)
+        assertEquals(setOf(idea), CUSTOMERS[reka]!!.orderedItems)
     }
 
     @Test fun testGetAllOrderedProducts() {
-        assertEquals(orderedProducts, shop.allOrderedProducts)
+        assertEquals(orderedProducts, shop.allOrderedItems)
     }
 }

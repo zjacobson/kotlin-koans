@@ -6,7 +6,7 @@ import org.junit.Test
 
 class N23CompoundTasksKtTest {
     @Test fun testGetCustomersWhoOrderedProduct() {
-        assertEquals(setOf(customers[reka], customers[asuka]), shop.getCustomersWhoOrderedProduct(idea))
+        assertEquals(setOf(CUSTOMERS[reka], CUSTOMERS[asuka]), shop.getCustomersWhoOrderedProduct(idea))
     }
 
     @Test fun testMostExpensiveDeliveredProduct() {
@@ -16,7 +16,7 @@ class N23CompoundTasksKtTest {
                         order(reSharper)
                 )
         )
-        assertEquals(reSharper, testShop.customers[0].getMostExpensiveDeliveredProduct())
+        assertEquals(reSharper, testShop.deliveries[0].getMostExpensiveDeliveredProduct())
     }
 
     @Test fun testNumberOfTimesEachProductWasOrdered() {

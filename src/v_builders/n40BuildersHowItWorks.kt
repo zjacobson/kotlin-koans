@@ -1,7 +1,6 @@
 package v_builders.builders
 
 import util.questions.Answer
-import util.questions.Answer.*
 
 fun todoTask40(): Nothing = TODO(
     """
@@ -21,7 +20,7 @@ fun task40() = linkedMapOf<Int, Answer>(
 1. In the Kotlin code
         tr {
             td {
-                text("Product")
+                text("Item")
             }
             td {
                 text("Popularity")
@@ -38,7 +37,7 @@ fun task40() = linkedMapOf<Int, Answer>(
 2. In the Kotlin code
             tr (color = "yellow") {
                 td {
-                    text("Product")
+                    text("Item")
                 }
                 td {
                     text("Popularity")
@@ -54,7 +53,7 @@ fun task40() = linkedMapOf<Int, Answer>(
 /*
 3. The block
                  {
-                     text("Product")
+                     text("Item")
                  }
 from the previous question is:
   a. block inside built-in syntax construction 'td'
@@ -68,7 +67,7 @@ from the previous question is:
 4. For the code
             tr (color = "yellow") {
                 this.td {
-                    text("Product")
+                    text("Item")
                 }
                 td {
                     text("Popularity")
@@ -80,7 +79,7 @@ which of the following is true:
   c. 'this' refers to a receiver parameter TR of the function literal:
             tr (color = "yellow") {
                   this@tr.td {
-                      text("Product")
+                      text("Item")
                   }
             }
  */

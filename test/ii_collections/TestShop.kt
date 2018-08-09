@@ -2,21 +2,21 @@ package ii_collections.data
 
 import ii_collections.*
 
-//products
-val idea = Product("IntelliJ IDEA Ultimate", 199.0)
-val reSharper = Product("ReSharper", 149.0)
-val dotTrace = Product("DotTrace", 159.0)
-val dotMemory = Product("DotMemory", 129.0)
-val dotCover = Product("DotCover", 99.0)
-val appCode = Product("AppCode", 99.0)
-val phpStorm = Product("PhpStorm", 99.0)
-val pyCharm = Product("PyCharm", 99.0)
-val rubyMine = Product("RubyMine", 99.0)
-val webStorm = Product("WebStorm", 49.0)
-val teamCity = Product("TeamCity", 299.0)
-val youTrack = Product("YouTrack", 500.0)
+//items
+val idea = Item("IntelliJ IDEA Ultimate", 199.0)
+val reSharper = Item("ReSharper", 149.0)
+val dotTrace = Item("DotTrace", 159.0)
+val dotMemory = Item("DotMemory", 129.0)
+val dotCover = Item("DotCover", 99.0)
+val appCode = Item("AppCode", 99.0)
+val phpStorm = Item("PhpStorm", 99.0)
+val pyCharm = Item("PyCharm", 99.0)
+val rubyMine = Item("RubyMine", 99.0)
+val webStorm = Item("WebStorm", 49.0)
+val teamCity = Item("TeamCity", 299.0)
+val youTrack = Item("YouTrack", 500.0)
 
-//customers
+//CUSTOMERS
 val lucas = "Lucas"
 val cooper = "Cooper"
 val nathan = "Nathan"
@@ -32,9 +32,9 @@ val Budapest = City("Budapest")
 val Ankara = City("Ankara")
 val Tokyo = City("Tokyo")
 
-fun customer(name: String, city: City, vararg orders: Order) = Customer(name, city, orders.toList())
-fun order(vararg products: Product, isDelivered: Boolean = true) = Order(products.toList(), isDelivered)
-fun shop(name: String, vararg customers: Customer) = Shop(name, customers.toList())
+fun customer(name: String, city: City, vararg orders: Order) = Delivery(name, city, orders.toList())
+fun order(vararg items: Item, isDelivered: Boolean = true) = Order(items.toList(), isDelivered)
+fun shop(name: String, vararg deliveries: Delivery) = Trip(name, deliveries.toList())
 
 val shop = shop("jb test shop",
         customer(lucas, Canberra,
@@ -63,7 +63,7 @@ val shop = shop("jb test shop",
 
 )
 
-val customers: Map<String, Customer> = shop.customers.fold(hashMapOf(), {
+val CUSTOMERS: Map<String, Delivery> = shop.deliveries.fold(hashMapOf(), {
     map, customer ->
     map[customer.name] = customer
     map
@@ -71,7 +71,7 @@ val customers: Map<String, Customer> = shop.customers.fold(hashMapOf(), {
 
 val orderedProducts = setOf(idea, reSharper, dotTrace, dotMemory, rubyMine, webStorm, phpStorm)
 
-val sortedCustomers = listOf(cooper, nathan, bajram, asuka, lucas, riku, reka).map { customers[it] }
+val sortedCustomers = listOf(cooper, nathan, bajram, asuka, lucas, riku, reka).map { CUSTOMERS[it] }
 
 val groupedByCities = mapOf(
         Canberra to listOf(lucas, cooper),
@@ -79,4 +79,4 @@ val groupedByCities = mapOf(
         Budapest to listOf(reka),
         Ankara to listOf(bajram),
         Tokyo to listOf(asuka, riku)
-).mapValues { it.value.map { name -> customers[name] } }
+).mapValues { it.value.map { name -> CUSTOMERS[name] } }

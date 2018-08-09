@@ -5,10 +5,10 @@ fun example4() {
     val longestString = listOf("a", "b").maxBy { it.length }
 }
 
-fun Shop.getCustomerWithMaximumNumberOfOrders(): Customer? =
-    // Return a customer whose order count is the highest among all customers
-    customers.maxBy { it.orders.size }
+fun Trip.getCustomerWithMaximumNumberOfOrders(): Delivery? =
+    // Return a customer whose order count is the highest among all deliveries
+    deliveries.maxBy { it.orders.size }
 
-fun Customer.getMostExpensiveOrderedProduct(): Product? =
+fun Delivery.getMostExpensiveOrderedProduct(): Item? =
     // Return the most expensive product which has been ordered
-    orders.flatMap { it.products }.maxBy { it.price }
+    orders.flatMap { it.items }.maxBy { it.price }

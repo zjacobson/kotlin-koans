@@ -5,7 +5,7 @@ fun example6() {
     listOf("a", "b", "cc").sumBy { it.length } == 4
 }
 
-fun Customer.getTotalOrderPrice(): Double =
-    // Return the sum of prices of all products that a customer has ordered.
+fun Delivery.getTotalOrderPrice(): Double =
+    // Return the sum of prices of all items that a customer has ordered.
     // Note: a customer may order the same product for several times.
-    orders.flatMap { it.products }.sumByDouble { it.price }
+    orders.flatMap { it.items }.sumByDouble { it.price }

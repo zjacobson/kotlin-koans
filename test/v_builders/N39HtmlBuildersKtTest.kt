@@ -6,11 +6,11 @@ import org.junit.Test
 class N39HtmlBuildersKtTest {
     @Test fun productTableIsFilled() {
         val result = renderProductTable()
-        assertTrue("Product table should contain corresponding data", result.contains("cactus"))
+        assertTrue("Item table should contain corresponding data", result.contains("cactus"))
     }
 
     @Test fun productTableIsColored() {
         val result = renderProductTable()
-        assertTrue("Product table should be colored", result.contains("bgcolor"))
+        assertTrue("Item table should be colored", result.contains("bgcolor"))
     }
 }

@@ -7,6 +7,6 @@ fun example() {
     result == listOf('a', 'b', 'c', '1', '2')
 }
 
-val Customer.orderedProducts: Set<Product> get() = orders.flatMap { it.products }.toSet()
+val Delivery.orderedItems: Set<Item> get() = orders.flatMap { it.items }.toSet()
 
-val Shop.allOrderedProducts: Set<Product> get() = customers.flatMap { it.orderedProducts }.toSet().also {  }
+val Trip.allOrderedItems: Set<Item> get() = deliveries.flatMap { it.orderedItems }.toSet().also {  }

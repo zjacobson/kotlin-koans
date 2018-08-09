@@ -10,7 +10,7 @@ fun example8() {
     negative == listOf(-4, -11)
 }
 
-fun Shop.getCustomersWithMoreUndeliveredOrdersThanDelivered(): Set<Customer> =
-// Return customers who have more undelivered orders than delivered
-        customers.partition { it.orders.count { !it.isDelivered } > it.orders.count { it.isDelivered } }.first.toSet()
+fun Trip.getCustomersWithMoreUndeliveredOrdersThanDelivered(): Set<Delivery> =
+// Return deliveries who have more undelivered orders than delivered
+        deliveries.partition { it.orders.count { !it.isDelivered } > it.orders.count { it.isDelivered } }.first.toSet()
 

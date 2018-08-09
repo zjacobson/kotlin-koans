@@ -10,9 +10,9 @@ class N14FilterMapKtTest {
     }
 
     /**
-     * Returns the list of the customers who live in the city 'city'
+     * Returns the list of the CUSTOMERS who live in the city 'city'
      */
     @Test fun testCustomersFromCity() {
-        assertEquals(listOf(customers[lucas], customers[cooper]), shop.getCustomersFrom(Canberra))
+        assertEquals(listOf(CUSTOMERS[lucas], CUSTOMERS[cooper]), shop.getCustomersFrom(Canberra))
     }
 }

@@ -1,18 +1,18 @@
 package ii_collections
 
-fun Shop.getCustomersWhoOrderedProduct(product: Product): Set<Customer> =
-// Return the set of customers who ordered the specified product
-        customers.filter { it.orderedProducts.contains(product) }.toSet()
+fun Trip.getCustomersWhoOrderedProduct(item: Item): Set<Delivery> =
+// Return the set of deliveries who ordered the specified item
+        deliveries.filter { it.orderedItems.contains(item) }.toSet()
 
 
 
-fun Customer.getMostExpensiveDeliveredProduct(): Product? =
-    // Return the most expensive product among all delivered products
+fun Delivery.getMostExpensiveDeliveredProduct(): Item? =
+    // Return the most expensive product among all delivered items
     // (use the Order.isDelivered flag)
-    orders.filter { it.isDelivered }.flatMap { it.products }.maxBy { it.price }
+    orders.filter { it.isDelivered }.flatMap { it.items }.maxBy { it.price }
 
-fun Shop.getNumberOfTimesProductWasOrdered(product: Product): Int =
-    // Return the number of times the given product was ordered.
-    // Note: a customer may order the same product for several times.
-    customers.flatMap { it.orders }.flatMap { it.products }.count { it == product }
+fun Trip.getNumberOfTimesProductWasOrdered(item: Item): Int =
+    // Return the number of times the given item was ordered.
+    // Note: a customer may order the same item for several times.
+    deliveries.flatMap { it.orders }.flatMap { it.items }.count { it == item }
 
