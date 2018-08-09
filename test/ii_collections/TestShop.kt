@@ -3,11 +3,11 @@ package ii_collections.data
 import ii_collections.*
 
 //items
-val idea = Item("IntelliJ IDEA Ultimate", 199.0)
-val reSharper = Item("ReSharper", 149.0)
-val dotTrace = Item("DotTrace", 159.0)
-val dotMemory = Item("DotMemory", 129.0)
-val dotCover = Item("DotCover", 99.0)
+val pizza = Item("Ultimate Pizza", 19.90)
+val spaghetti = Item("Spaghetti", 14.90)
+val `sushi platter` = Item("Sushi Platter", 15.90)
+val `fried chicken` = Item("Fried Chicken Dinner", 12.90)
+val `hot dog` = Item("Hot dog", 9.90)
 val appCode = Item("AppCode", 99.0)
 val phpStorm = Item("PhpStorm", 99.0)
 val pyCharm = Item("PyCharm", 99.0)
@@ -38,23 +38,23 @@ fun trip(name: String, vararg deliveries: Delivery) = Trip(name, deliveries.toLi
 
 val trip = trip("jb test trip",
         customer(lucas, Canberra,
-                order(reSharper),
-                order(reSharper, dotMemory, dotTrace)
+                order(spaghetti),
+                order(spaghetti, `fried chicken`, `sushi platter`)
         ),
         customer(cooper, Canberra),
         customer(nathan, Vancouver,
                 order(rubyMine, webStorm)
         ),
         customer(reka, Budapest,
-                order(idea, isDelivered = false),
-                order(idea, isDelivered = false),
-                order(idea)
+                order(pizza, isDelivered = false),
+                order(pizza, isDelivered = false),
+                order(pizza)
         ),
         customer(bajram, Ankara,
-                order(reSharper)
+                order(spaghetti)
         ),
         customer(asuka, Tokyo,
-                order(idea)
+                order(pizza)
         ),
         customer(riku, Tokyo,
                 order(phpStorm, phpStorm),
@@ -69,7 +69,7 @@ val DELIVERIES: Map<String, Delivery> = trip.deliveries.fold(hashMapOf(), {
     map
 })
 
-val orderedItems = setOf(idea, reSharper, dotTrace, dotMemory, rubyMine, webStorm, phpStorm)
+val orderedItems = setOf(pizza, spaghetti, `sushi platter`, `fried chicken`, rubyMine, webStorm, phpStorm)
 
 val sortedDeliveries = listOf(cooper, nathan, bajram, asuka, lucas, riku, reka).map { DELIVERIES[it] }
 

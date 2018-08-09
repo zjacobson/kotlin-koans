@@ -6,7 +6,7 @@ import org.junit.Test
 
 class N16FlatMapKtTest {
     @Test fun testGetOrderedItemsSet() {
-        assertEquals(setOf(idea), DELIVERIES[reka]!!.orderedItems)
+        assertEquals(setOf(pizza), DELIVERIES[reka]!!.orderedItems)
     }
 
     @Test fun testGetAllOrderedItems() {

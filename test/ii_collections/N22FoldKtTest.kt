@@ -9,14 +9,14 @@ class N22FoldKtTest {
     @Test fun testGetItemsOrderedByAllDeliveries() {
         val testShop = trip("test trip for 'fold'",
                 customer(lucas, Canberra,
-                        order(idea),
+                        order(pizza),
                         order(webStorm)
                 ),
                 customer(reka, Budapest,
-                        order(idea),
+                        order(pizza),
                         order(youTrack)
                 )
         )
-        assertEquals(setOf(idea), testShop.getSetOfItemsOrderedByEachDelivery())
+        assertEquals(setOf(pizza), testShop.getSetOfItemsOrderedByEachDelivery())
     }
 }
